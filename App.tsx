@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { ClassExample } from './classes/ClassExample';
 import { DoggyRow } from './classes/DoggyComponent';
+import Request from './classes/RequestClass';
+import RequestFunction from './classes/RequestFunction';
+
 
 // everything in react's UI is a component
 // you can build a complex component using simpler ones
@@ -24,13 +27,13 @@ export default function App() {
       <FlatList 
         data={[
           {name: "doggy1", uri: "https://www.warrenphotographic.co.uk/photography/sqrs/42790.jpg"},
-          {name: "doggy2", uri: "https://www.warrenphotographic.co.uk/photography/sqrs/42790.jpg"},
-          {name: "doggy3", uri: "https://www.warrenphotographic.co.uk/photography/sqrs/42790.jpg"},
         ]}
         renderItem={({item}) => {
           return <DoggyRow name={item.name} uri={item.uri} />;
         }}
       />
+      <Request url="https://bitbucket.org/itesmguillermorivas/partial2/raw/45f22905941b70964102fce8caf882b51e988d23/carros.json" />
+      <RequestFunction url="https://bitbucket.org/itesmguillermorivas/partial2/raw/45f22905941b70964102fce8caf882b51e988d23/carros.json" />
       <StatusBar style="auto" />
     </View>
   );
